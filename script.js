@@ -15,3 +15,8 @@ function divide(a, b) {
   if (b === 0) return "NOPE!";
   return a / b;
 }
+
+// variables for each part of the calculator operation
+let numA;
+let numB;
+let operator;

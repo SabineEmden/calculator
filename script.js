@@ -20,3 +20,20 @@ function divide(a, b) {
 let numA;
 let numB;
 let operator;
+let result;
+
+// function to call functions for math operators
+function operate(numA, numB, operator) {
+  if (operator === "+") {
+    result = add(numA, numB);
+  } else if (operator === "-") {
+    result = subtract(numA, numB);
+  } else if (operator === "*") {
+    result = multiply(numA, numB);
+  } else if (operator === "/") {
+    result = divide(numA, numB);
+  } else {
+    result = "ERROR";
+  }
+  return result;
+} 

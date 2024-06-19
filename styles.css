@@ -5,9 +5,13 @@
   align-content: center;
   height: 520px;
   width: 418px;
-  padding: 10px;
-  background-color: black;
-  border-radius: 8px;
+  padding: 5px;
+  background-color: #708090;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
 }
 
 .utility,
@@ -17,6 +21,7 @@
   width: 100px;
   margin: 1px;
   border-radius: 8px;
+  border-color: #708090;
 }
 
 #zero {
@@ -33,5 +38,5 @@
 
 .digit {
   background-color: #0073e6;
-  color: #ffffff;
+  font-weight: bold;
 }

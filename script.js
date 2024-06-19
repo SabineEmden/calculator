@@ -36,4 +36,4 @@ function operate(numA, numB, operator) {
     result = "ERROR";
   }
   return result;
-} 
+}

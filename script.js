@@ -53,6 +53,15 @@ function updateDisplay(string) {
   display.textContent = string;
 }
 
+const digitKeys = document.querySelectorAll(".digit");
+
+digitKeys.forEach((key) => {
+  key.addEventListener("click", () => {
+    input += key.textContent;
+    updateDisplay(input);
+  });
+});
+
 function storeNumber(string) {
   number = parseFloat(string);
   if (numA === null) {

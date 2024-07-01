@@ -26,8 +26,8 @@ let operator = null;
 
 // function to call functions for math operators
 function operate(numA, numB, operator) {
-  if (numA === "NOPE!") {
-    return numA;
+  if (isNaN(numA) || isNaN(numB)) {
+    return "ERROR";
   } else if (numB === null) {
     numB = numA;
   }
@@ -42,5 +42,22 @@ function operate(numA, numB, operator) {
     return divide(numA, numB);
   } else {
     return "ERROR";
+  }
+}
+
+// variable to store digits entered by user
+let input = "";
+
+function updateDisplay(string) {
+  const display = document.querySelector("#display");
+  display.textContent = string;
+}
+
+function storeNumber(string) {
+  number = parseFloat(string);
+  if (numA === null) {
+    numA = number;
+  } else {
+    numB = number;
   }
 }

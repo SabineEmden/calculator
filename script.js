@@ -12,28 +12,35 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  if (b === 0) return "NOPE!";
-  return a / b;
+  if (b === 0) {
+    return "NOPE!";
+  } else {
+    return a / b;
+  }
 }
 
 // variables for each part of the calculator operation
-let numA;
-let numB;
-let operator;
-let result;
+let numA = null;
+let numB = null;
+let operator = null;
 
 // function to call functions for math operators
 function operate(numA, numB, operator) {
-  if (operator === "+") {
-    result = add(numA, numB);
-  } else if (operator === "-") {
-    result = subtract(numA, numB);
-  } else if (operator === "*") {
-    result = multiply(numA, numB);
-  } else if (operator === "/") {
-    result = divide(numA, numB);
-  } else {
-    result = "ERROR";
+  if (numA === "NOPE!") {
+    return numA;
+  } else if (numB === null) {
+    numB = numA;
   }
-  return result;
+
+  if (operator === "addition") {
+    return add(numA, numB);
+  } else if (operator === "subtraction") {
+    return subtract(numA, numB);
+  } else if (operator === "multiplication") {
+    return multiply(numA, numB);
+  } else if (operator === "division") {
+    return divide(numA, numB);
+  } else {
+    return "ERROR";
+  }
 }

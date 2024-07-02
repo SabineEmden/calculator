@@ -25,7 +25,7 @@ let numB = null;
 let operator = null;
 
 // function to call functions for math operators
-function operate(numA, numB, operator) {
+function operate() {
   if (isNaN(numA) || isNaN(numB)) {
     return "ERROR";
   } else if (numB === null) {
@@ -53,6 +53,16 @@ function updateDisplay(string) {
   display.textContent = string;
 }
 
+function storeNumber() {
+  number = parseFloat(input);
+  if (numA === null) {
+    numA = number;
+  } else {
+    numB = number;
+  }
+  input = "";
+}
+
 const digitKeys = document.querySelectorAll(".digit");
 
 digitKeys.forEach((key) => {
@@ -62,11 +72,18 @@ digitKeys.forEach((key) => {
   });
 });
 
-function storeNumber(string) {
-  number = parseFloat(string);
-  if (numA === null) {
-    numA = number;
-  } else {
-    numB = number;
-  }
-}
+const operatorKeys = document.querySelectorAll(".operator");
+
+let toggle = 0;
+
+operatorKeys.forEach((key) => {
+  key.addEventListener("click", () => {
+    storeNumber(input);
+    if (toggle === 1) {
+      numA = operate();
+      updateDisplay(numA);
+    }
+    operator = key.id;
+    toggle = 1;
+  });
+});

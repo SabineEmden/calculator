@@ -99,3 +99,15 @@ equalsKey.addEventListener("click", () => {
   updateDisplay(numA);
   toggle = 0;
 });
+
+// event listener for "clear" key
+const clearKey = document.querySelector("#clear");
+
+clearKey.addEventListener("click", () => {
+  numA = null;
+  numB = null;
+  operator = null;
+  toggle = 0;
+  input = "";
+  updateDisplay("0");
+});

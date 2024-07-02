@@ -36,9 +36,7 @@ body {
   justify-content: space-between;
 }
 
-.utility,
-.operator,
-.digit {
+button {
   font-size: 32px;
   height: 100px;
   width: 100px;
@@ -50,15 +48,15 @@ body {
   width: 204px;
 }
 
-.utility {
+.tertiary {
   background-color: #00b4c5;
 }
 
-.operator {
+.secondary {
   background-color: #00bf7d;
 }
 
-.digit {
+.primary {
   background-color: #0073e6;
   font-weight: bold;
 }

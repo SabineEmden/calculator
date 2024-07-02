@@ -45,13 +45,13 @@ function operate() {
   }
 }
 
-// variable to store digits entered by user
-let input = "";
-
 function updateDisplay(string) {
   const display = document.querySelector("#display");
   display.textContent = string;
 }
+
+// store digits entered by user
+let input = "";
 
 function storeNumber() {
   number = parseFloat(input);
@@ -63,6 +63,7 @@ function storeNumber() {
   input = "";
 }
 
+// event listeners for number keys
 const digitKeys = document.querySelectorAll(".digit");
 
 digitKeys.forEach((key) => {
@@ -72,13 +73,14 @@ digitKeys.forEach((key) => {
   });
 });
 
+// event listeners for operator keys
 const operatorKeys = document.querySelectorAll(".operator");
 
 let toggle = 0;
 
 operatorKeys.forEach((key) => {
   key.addEventListener("click", () => {
-    storeNumber(input);
+    storeNumber();
     if (toggle === 1) {
       numA = operate();
       updateDisplay(numA);
@@ -86,4 +88,14 @@ operatorKeys.forEach((key) => {
     operator = key.id;
     toggle = 1;
   });
+});
+
+// event listener for "equals" key
+const equalsKey = document.querySelector("#equals");
+
+equalsKey.addEventListener("click", () => {
+  storeNumber();
+  numA = operate();
+  updateDisplay(numA);
+  toggle = 0;
 });

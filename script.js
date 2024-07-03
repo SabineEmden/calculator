@@ -45,9 +45,9 @@ function operate() {
   }
 }
 
-function updateDisplay(string) {
+function updateDisplay(output) {
   const display = document.querySelector("#display");
-  display.textContent = string;
+  display.textContent = output;
 }
 
 // store digits entered by user
@@ -68,7 +68,11 @@ const digitKeys = document.querySelectorAll(".digit");
 
 digitKeys.forEach((key) => {
   key.addEventListener("click", () => {
-    input += key.textContent;
+    if (input.length > 12) {
+      input = "    TOO LONG!";
+    } else {
+      input += key.textContent;
+    }
     updateDisplay(input);
   });
 });

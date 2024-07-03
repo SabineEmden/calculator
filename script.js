@@ -27,22 +27,30 @@ let operator = null;
 // function to call functions for math operators
 function operate() {
   if (isNaN(numA) || isNaN(numB)) {
-    return "ERROR";
+    numA = "ERROR";
   } else if (numB === null) {
     numB = numA;
   }
 
   if (operator === "addition") {
-    return add(numA, numB);
+    numA = add(numA, numB);
   } else if (operator === "subtraction") {
-    return subtract(numA, numB);
+    numA = subtract(numA, numB);
   } else if (operator === "multiplication") {
-    return multiply(numA, numB);
+    numA = multiply(numA, numB);
   } else if (operator === "division") {
-    return divide(numA, numB);
+    numA = divide(numA, numB);
   } else {
-    return "ERROR";
+    numA = "ERROR";
   }
+
+  let result;
+  if (numA.toString().length > 12) {
+    result = numA.toPrecision(12);
+  } else {
+    result = numA;
+  }
+  updateDisplay(result);
 }
 
 function updateDisplay(output) {
@@ -86,8 +94,7 @@ operatorKeys.forEach((key) => {
   key.addEventListener("click", () => {
     storeNumber();
     if (toggle === 1) {
-      numA = operate();
-      updateDisplay(numA);
+      operate();
     }
     operator = key.id;
     toggle = 1;
@@ -99,8 +106,7 @@ const equalsKey = document.querySelector("#equals");
 
 equalsKey.addEventListener("click", () => {
   storeNumber();
-  numA = operate();
-  updateDisplay(numA);
+  operate();
   toggle = 0;
 });
 

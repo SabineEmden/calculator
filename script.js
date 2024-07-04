@@ -26,31 +26,37 @@ let operator = null;
 
 // function to call functions for math operators
 function operate() {
-  if (isNaN(numA) || isNaN(numB)) {
-    numA = "ERROR";
-  } else if (numB === null) {
-    numB = numA;
-  }
-
-  if (operator === "addition") {
-    numA = add(numA, numB);
-  } else if (operator === "subtraction") {
-    numA = subtract(numA, numB);
-  } else if (operator === "multiplication") {
-    numA = multiply(numA, numB);
-  } else if (operator === "division") {
-    numA = divide(numA, numB);
+  // IF variable numA stores an error message,
+  // THEN update display with the error message, don't do anything else
+  if (typeof numA === "string") {
+    updateDisplay(numA);
   } else {
-    numA = "ERROR";
+    // IF no second number has been entered,
+    // THEN use the first number as the second
+    if (numB === null) {
+      numB = numA;
+    }
+    // CALL the function that corresponds with the math operator
+    if (operator === "addition") {
+      numA = add(numA, numB);
+    } else if (operator === "subtraction") {
+      numA = subtract(numA, numB);
+    } else if (operator === "multiplication") {
+      numA = multiply(numA, numB);
+    } else if (operator === "division") {
+      numA = divide(numA, numB);
+    } else {
+      numA = "ERROR";
+    }
+    // CHECK length of result and round if necessary
+    let result;
+    if (typeof numA === "number" && numA.toString().length > 12) {
+      result = numA.toPrecision(12);
+    } else {
+      result = numA;
+    }
+    updateDisplay(result);
   }
-
-  let result;
-  if (numA.toString().length > 12) {
-    result = numA.toPrecision(12);
-  } else {
-    result = numA;
-  }
-  updateDisplay(result);
 }
 
 function updateDisplay(output) {
@@ -73,7 +79,6 @@ function storeNumber() {
 
 // event listeners for number keys
 const digitKeys = document.querySelectorAll(".digit");
-
 digitKeys.forEach((key) => {
   key.addEventListener("click", () => {
     if (input.length > 12) {
@@ -87,12 +92,12 @@ digitKeys.forEach((key) => {
 
 // event listeners for operator keys
 const operatorKeys = document.querySelectorAll(".operator");
-
 let toggle = 0;
-
 operatorKeys.forEach((key) => {
   key.addEventListener("click", () => {
-    storeNumber();
+    if (input.length > 0) {
+      storeNumber();
+    }
     if (toggle === 1) {
       operate();
     }
@@ -103,16 +108,20 @@ operatorKeys.forEach((key) => {
 
 // event listener for "equals" key
 const equalsKey = document.querySelector("#equals");
-
 equalsKey.addEventListener("click", () => {
-  storeNumber();
-  operate();
-  toggle = 0;
+  if (input.length > 0) {
+    storeNumber();
+  }
+  if (numA === null || operator === null) {
+    return;
+  } else {
+    operate();
+    toggle = 0;
+  }
 });
 
 // event listener for "clear" key
 const clearKey = document.querySelector("#clear");
-
 clearKey.addEventListener("click", () => {
   numA = null;
   numB = null;

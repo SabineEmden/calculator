@@ -50,8 +50,8 @@ function operate() {
     }
     // CHECK length of result and round if necessary
     let result;
-    if (typeof numA === "number" && numA.toString().length > 12) {
-      result = numA.toPrecision(12);
+    if (typeof numA === "number" && numA.toString().length > 9) {
+      result = numA.toPrecision(9);
     } else {
       result = numA;
     }

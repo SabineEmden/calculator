@@ -39,7 +39,7 @@ The button for the decimal point, the backspace button to delete the digit that 
 
 I plan to improve this project over time, implementing the features for extra credit and refactoring it as my coding skills develop.
 
-#### Version 0.1
+#### Version 1.0.0 - 2024-07-05
 
 Meets all requirements for the basic version of the project. Doesn't include any of the features for extra credit.
 

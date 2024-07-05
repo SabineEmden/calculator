@@ -33,7 +33,7 @@ The button for the decimal point, the backspace button to delete the digit that 
 ### Links
 
 - Solution URL: https://github.com/SabineEmden/calculator
-- Live Site URL: [https://sabineemden.github.io/calculator/](https://sabineemden.github.io/calculator/)
+- Live Site URL: https://sabineemden.github.io/calculator/
 
 ### Changelog
 

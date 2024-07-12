@@ -28,7 +28,7 @@ The button for the decimal point and the button to toggle between positive and n
 
 ### Screenshot
 
-![screenshot for Project: Calculator](./screenshot.jpg)
+![screenshot for Project: Calculator](./screenshot.png)
 
 ### Links
 

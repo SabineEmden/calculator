@@ -22,9 +22,9 @@ Project: Calculator is the final project in the Foundations Course.
 
 The calculator can perform addition, subtraction, multiplication, and division. It evaluates a single pair of numbers at a time, ignoring the order of precedence.
 
-The user interface resembles a physical calculator. It has buttons for the ten digits, each of the four basic math operators, an "equals" button, and a "clear" button. The user clicks these buttons to enter data. A display shows the numbers the user has entered and the results of the mathematical operations.
+The user interface resembles a physical calculator. It has buttons for the ten digits, each of the four basic math operators, an "equals" button, a "clear" button, and a backspace button. The user clicks these buttons to enter data. A display shows the numbers the user has entered and the results of the mathematical operations.
 
-The button for the decimal point, the backspace button to delete the digit that was last entered, and the button to toggle between positive and negative numbers are part of the extra credit and currently deactivated.
+The button for the decimal point and the button to toggle between positive and negative numbers are part of the extra credit and currently deactivated.
 
 ### Screenshot
 
@@ -42,6 +42,10 @@ I plan to improve this project over time, implementing the features for extra cr
 #### Version 1.0.0 - 2024-07-05
 
 Meets all requirements for the basic version of the project. Doesn't include any of the features for extra credit.
+
+#### Version 1.1.0 - 2024-07-12
+
+Adds backspace button to let the user delete the digit that was last entered.
 
 ## My process
 

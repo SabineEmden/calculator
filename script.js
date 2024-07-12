@@ -130,3 +130,13 @@ clearKey.addEventListener("click", () => {
   input = "";
   updateDisplay("0");
 });
+
+// event listener for "backspace" key
+const backspaceKey = document.querySelector("#backspace");
+backspaceKey.addEventListener("click", () => {
+  if (input.length > 0) {
+    let temp = input;
+    input = temp.slice(0, -1);
+    updateDisplay(input);
+  }
+});

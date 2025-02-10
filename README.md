@@ -96,9 +96,10 @@ This project concludes the [Foundations Course](https://www.theodinproject.com/p
 
 ## Author
 
-Find me online:
+I'm an aspiring web developer and a former chemist. What I bring from chemistry to software development is a systematic approach to problem solving and the perseverance to not give up easily.
 
-- Mastodon - [@sabineemden](https://mastodon.online/@sabineemden)
+- Personal Website - [Sabine Emden](https://www.sabineemden.com/)
+- Mastodon - [@sabineemden](https://social.tchncs.de/@sabineemden)
 
 ## Acknowledgements
 
